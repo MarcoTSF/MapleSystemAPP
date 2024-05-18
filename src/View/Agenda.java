@@ -53,13 +53,15 @@ public class Agenda extends javax.swing.JFrame {
 
         Tabela1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Cliente", "Serviço", "Data Reserva", "Data Entrega", "Hora"
             }
         ));
         TabelaAgenda.setViewportView(Tabela1);
@@ -67,15 +69,16 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().add(TabelaAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 630, 120));
 
         jButton1.setBackground(new java.awt.Color(164, 0, 0));
-        jButton1.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Agendar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 260, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 190, 30));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 260, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 260, 130));
         getContentPane().add(CampoHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 150, -1));
         getContentPane().add(CampoDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 150, -1));
         getContentPane().add(CampoDataReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 150, -1));

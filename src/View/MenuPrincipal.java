@@ -34,6 +34,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         ServicoMenu = new javax.swing.JMenuItem();
         UsuarioMenu = new javax.swing.JMenuItem();
         OperacaoMenu = new javax.swing.JMenu();
+        AgendaMenu = new javax.swing.JMenuItem();
         RelatorioMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +64,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         OperacaoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Icons/setting-icon-24.png"))); // NOI18N
         OperacaoMenu.setText("Operação");
+
+        AgendaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Icons/plus-icon-24.png"))); // NOI18N
+        AgendaMenu.setText("Agendar");
+        OperacaoMenu.add(AgendaMenu);
+
         jMenuBar1.add(OperacaoMenu);
 
         RelatorioMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Icons/relatorio-icon-24.png"))); // NOI18N
@@ -110,6 +116,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AgendaMenu;
     private javax.swing.JLabel BackgroundMenu;
     private javax.swing.JMenu CadastroMenu;
     private javax.swing.JMenuItem ClienteMenu;
