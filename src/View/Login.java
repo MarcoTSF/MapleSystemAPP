@@ -42,7 +42,8 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ButtonLogin.setBackground(new java.awt.Color(164, 0, 0));
-        ButtonLogin.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        ButtonLogin.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        ButtonLogin.setForeground(new java.awt.Color(255, 255, 255));
         ButtonLogin.setText("Entrar");
         ButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -30,8 +30,8 @@ public class Agenda extends javax.swing.JFrame {
         TabelaAgenda = new javax.swing.JScrollPane();
         Tabela1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ObservacaoAgenda = new javax.swing.JScrollPane();
+        Observacao1 = new javax.swing.JTextArea();
         CampoHora = new javax.swing.JFormattedTextField();
         CampoDataEntrega = new javax.swing.JFormattedTextField();
         CampoDataReserva = new javax.swing.JFormattedTextField();
@@ -53,15 +53,13 @@ public class Agenda extends javax.swing.JFrame {
 
         Tabela1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Cliente", "Serviço", "Data Reserva", "Data Entrega", "Hora"
+                "ID", "Cliente", "Serviço", "Data Reserva", "Data Entrega", "Hora", "Observação"
             }
         ));
         TabelaAgenda.setViewportView(Tabela1);
@@ -74,11 +72,11 @@ public class Agenda extends javax.swing.JFrame {
         jButton1.setText("Agendar");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 190, 30));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        Observacao1.setColumns(20);
+        Observacao1.setRows(5);
+        ObservacaoAgenda.setViewportView(Observacao1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 260, 130));
+        getContentPane().add(ObservacaoAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 260, 130));
         getContentPane().add(CampoHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 270, 150, -1));
         getContentPane().add(CampoDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 150, -1));
         getContentPane().add(CampoDataReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 150, -1));
@@ -195,6 +193,8 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField CampoHora;
     private javax.swing.JTextField CampoId;
     private javax.swing.JComboBox<String> CampoServico;
+    private javax.swing.JTextArea Observacao1;
+    private javax.swing.JScrollPane ObservacaoAgenda;
     private javax.swing.JLabel PainelAgenda;
     private javax.swing.JTable Tabela1;
     private javax.swing.JScrollPane TabelaAgenda;
@@ -206,7 +206,5 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel TextId;
     private javax.swing.JLabel TextServico;
     private javax.swing.JButton jButton1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
