@@ -30,4 +30,4 @@ Sinta-se à vontade para contribuir para o projeto. Você pode abrir problemas (
 
 ## Licença
 
-Este projeto é licenciado sob a [MIT License](LISENSE), leia mais sobre em: https://opensource.org/license/MIT.
+Este projeto é licenciado sob a [MIT License](https://opensource.org/license/MIT).
