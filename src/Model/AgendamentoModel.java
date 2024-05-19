@@ -17,13 +17,13 @@ import java.util.logging.Logger;
  */
 public class AgendamentoModel {
     private int id;
-    private Cliente cliente;
-    private Servico servico;
+    private ClienteModel cliente;
+    private ServicoModel servico;
     private Date dataReserva;
     private Date dataEntrega;
     private String observacao;
 
-    public AgendamentoModel(int id, Cliente cliente, Servico servico, String dataReserva, String dataEntrega) {
+    public AgendamentoModel(int id, ClienteModel cliente, ServicoModel servico, String dataReserva, String dataEntrega) {
         this.id = id;
         this.cliente = cliente;
         this.servico = servico;
@@ -39,7 +39,7 @@ public class AgendamentoModel {
         }
     }
     
-    public AgendamentoModel(int id, Cliente cliente, Servico servico, String dataReserva, String dataEntrega, String observacao) {
+    public AgendamentoModel(int id, ClienteModel cliente, ServicoModel servico, String dataReserva, String dataEntrega, String observacao) {
         this(id, cliente, servico, dataReserva, dataEntrega);
         this.observacao = observacao;
     }
@@ -52,19 +52,19 @@ public class AgendamentoModel {
         this.id = id;
     }
 
-    public Cliente getCliente() {
+    public ClienteModel getCliente() {
         return cliente;
     }
 
-    public void setColaborador(Cliente cliente) {
+    public void setColaborador(ClienteModel cliente) {
         this.cliente = cliente;
     }
 
-    public Servico getServico() {
+    public ServicoModel getServico() {
         return servico;
     }
 
-    public void setServico(Servico servico) {
+    public void setServico(ServicoModel servico) {
         this.servico = servico;
     }
 

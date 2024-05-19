@@ -5,17 +5,31 @@
  */
 package View;
 
+import Controller.LoginController;
+import Model.DAO.Banco;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author mtsfs
  */
 public class Login extends javax.swing.JFrame {
+    
+    private final LoginController controller;
 
     /**
      * Creates new form Login
+     * @throws java.text.ParseException
      */
-    public Login() {
+    public Login() throws ParseException {
         initComponents();
+        controller = new LoginController(this);
+        Banco.inicia();
     }
 
     /**
@@ -111,6 +125,7 @@ public class Login extends javax.swing.JFrame {
 
     private void ButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginActionPerformed
         // TODO add your handling code here:
+        this.controller.entrarNoSistema();
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
     private void CampoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoSenhaActionPerformed
@@ -147,7 +162,11 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                try {
+                    new Login().setVisible(true);
+                } catch (ParseException ex) {
+                    Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -164,4 +183,23 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel TextSenha;
     private javax.swing.JLabel TextUsuario;
     // End of variables declaration//GEN-END:variables
+
+    public JPasswordField getCampoSenha() {
+        return CampoSenha;
+    }
+
+    public void setCampoSenha(JPasswordField CampoSenha) {
+        this.CampoSenha = CampoSenha;
+    }
+
+    public JTextField getCampoUsuario() {
+        return CampoUsuario;
+    }
+
+    public void setCampoUsuario(JTextField CampoUsuario) {
+        this.CampoUsuario = CampoUsuario;
+    }
+    public void exibeMensagem(String mensagem) { 
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
 }
