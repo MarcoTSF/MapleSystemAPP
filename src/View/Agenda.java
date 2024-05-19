@@ -5,17 +5,28 @@
  */
 package View;
 
+import Controller.AgendaController;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author mtsfs
  */
 public class Agenda extends javax.swing.JFrame {
 
+    private final AgendaController controller;
+
     /**
      * Creates new form Agenda
      */
     public Agenda() {
         initComponents();
+        controller = new AgendaController(this);
+        iniciar();
     }
 
     /**
@@ -48,7 +59,10 @@ public class Agenda extends javax.swing.JFrame {
         PainelAgenda = new javax.swing.JLabel();
         BackgroundAgenda = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(900, 506));
+        setMinimumSize(new java.awt.Dimension(900, 506));
+        setPreferredSize(new java.awt.Dimension(900, 506));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Tabela1.setModel(new javax.swing.table.DefaultTableModel(
@@ -70,6 +84,11 @@ public class Agenda extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Agendar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 190, 30));
 
         Observacao1.setColumns(20);
@@ -81,12 +100,17 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().add(CampoDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 150, -1));
         getContentPane().add(CampoDataReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 150, -1));
 
-        CampoServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(CampoServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 150, -1));
 
-        CampoCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CampoCliente.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CampoClienteItemStateChanged(evt);
+            }
+        });
         getContentPane().add(CampoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 150, -1));
 
+        CampoId.setEditable(false);
+        CampoId.setForeground(new java.awt.Color(102, 102, 102));
         CampoId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoIdActionPerformed(evt);
@@ -150,6 +174,16 @@ public class Agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.controller.agendar();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void CampoClienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CampoClienteItemStateChanged
+        // TODO add your handling code here:
+         this.controller.atualizaId();
+    }//GEN-LAST:event_CampoClienteItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -207,4 +241,74 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel TextServico;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getTabela1() {
+        return Tabela1;
+    }
+
+    public void setTabela1(JTable Tabela1) {
+        this.Tabela1 = Tabela1;
+    }
+
+    public JComboBox<String> getCampoCliente() {
+        return CampoCliente;
+    }
+
+    public void setCampoCliente(JComboBox<String> CampoCliente) {
+        this.CampoCliente = CampoCliente;
+    }
+
+    public JComboBox<String> getCampoServico() {
+        return CampoServico;
+    }
+
+    public void setCampoServico(JComboBox<String> CampoServico) {
+        this.CampoServico = CampoServico;
+    }
+
+    public JTextArea getObservacao1() {
+        return Observacao1;
+    }
+
+    public void setObservacao1(JTextArea Observacao1) {
+        this.Observacao1 = Observacao1;
+    }
+
+    public JTextField getCampoDataReserva() {
+        return CampoDataReserva;
+    }
+
+    public void setCampoDataReserva(JTextField CampoDataReserva) {
+        this.CampoDataReserva = (JFormattedTextField) CampoDataReserva;
+    }
+    
+    public JTextField getCampoDataEntrega() {
+        return CampoDataEntrega;
+    }
+
+    public void setCampoDataEntrega(JTextField CampoDataEntrega) {
+        this.CampoDataEntrega = (JFormattedTextField) CampoDataEntrega;
+    }
+
+    public JTextField getCampoHora() {
+        return CampoHora;
+    }
+
+    public void setCampoHora(JTextField CampoHora) {
+        this.CampoHora = (JFormattedTextField) CampoHora;
+    }
+
+    public JTextField getCampoId() {
+        return CampoId;
+    }
+
+    public void setCampoId(JTextField CampoId) {
+        this.CampoId = CampoId;
+    }
+    
+    private void iniciar() {
+         this.controller.atualizaTabela();
+         this.controller.atualizaCliente();
+         this.controller.atualizaServico();
+    }
 }

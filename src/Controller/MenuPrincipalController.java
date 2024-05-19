@@ -19,7 +19,7 @@ public class MenuPrincipalController {
         this.view = view;
     }
     
-    public void abrirReservas(){
+    public void abrirAgenda(){
         Agenda agenda = new Agenda();
         agenda.setVisible(true);
     }

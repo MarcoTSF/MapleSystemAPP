@@ -5,17 +5,22 @@
  */
 package View;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author mtsfs
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+    
+    private final MenuPrincipalController controller;
 
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        this.controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -38,11 +43,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         RelatorioMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(900, 506));
+        setMinimumSize(new java.awt.Dimension(900, 506));
+        setPreferredSize(new java.awt.Dimension(900, 506));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BackgroundMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/background-menu.png"))); // NOI18N
-        getContentPane().add(BackgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 480));
+        getContentPane().add(BackgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, -1, 480));
 
+        jMenuBar1.setMaximumSize(new java.awt.Dimension(197, 30));
+        jMenuBar1.setMinimumSize(new java.awt.Dimension(197, 30));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(197, 30));
 
         CadastroMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Icons/planning-icon-24.png"))); // NOI18N
@@ -67,6 +77,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         AgendaMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Icons/plus-icon-24.png"))); // NOI18N
         AgendaMenu.setText("Agendar");
+        AgendaMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgendaMenuActionPerformed(evt);
+            }
+        });
         OperacaoMenu.add(AgendaMenu);
 
         jMenuBar1.add(OperacaoMenu);
@@ -80,6 +95,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void AgendaMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendaMenuActionPerformed
+        // TODO add your handling code here:
+        this.controller.abrirAgenda();
+    }//GEN-LAST:event_AgendaMenuActionPerformed
+    
     /**
      * @param args the command line arguments
      */

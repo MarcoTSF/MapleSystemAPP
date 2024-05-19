@@ -53,6 +53,7 @@ public class Login extends javax.swing.JFrame {
         BackgroundLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(900, 506));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ButtonLogin.setBackground(new java.awt.Color(164, 0, 0));
@@ -111,10 +112,10 @@ public class Login extends javax.swing.JFrame {
 
         PainelLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PainelLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/Icons/painel-login.png"))); // NOI18N
-        getContentPane().add(PainelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
+        getContentPane().add(PainelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 506));
 
         BackgroundLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/background-login.jpg"))); // NOI18N
-        getContentPane().add(BackgroundLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(BackgroundLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 506));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -199,6 +200,7 @@ public class Login extends javax.swing.JFrame {
     public void setCampoUsuario(JTextField CampoUsuario) {
         this.CampoUsuario = CampoUsuario;
     }
+    
     public void exibeMensagem(String mensagem) { 
         JOptionPane.showMessageDialog(null, mensagem);
     }
