@@ -36,11 +36,13 @@ public class Banco {
         UsuarioModel usuario1 = new UsuarioModel(1, "Marco Tulio Salvador", "adm1", "administrador", "31990905050", "adm1@alunouna.com");
         UsuarioModel usuario2 = new UsuarioModel(2, "Daniel Jones", "func1", "funcionario", "31980804040", "func1@alunouna.com");
         
+        ClienteModel cliente0 = new ClienteModel(0, "Selecione o Cliente", "");
         ClienteModel cliente1 = new ClienteModel(1, "Alan Figueiredo", "31950506060", "alan@test.com", "Engenharia do Produto");
         ClienteModel cliente2 = new ClienteModel(2, "Judite Oliveira", "31980807070", "judite@test.com", "Produção");
         ClienteModel cliente3 = new ClienteModel(3, "Pedro Ramos", "31940406060", "pedro@test.com", "Montagem Final");
         ClienteModel cliente4 = new ClienteModel(4, "Chico Moedas", "31990804050", "chico@tentei.com", "Tentativa");
         
+        ServicoModel servico0 = new ServicoModel(0, "Selecione o Serviço");
         ServicoModel servico1 = new ServicoModel(1, "Projetor");
         ServicoModel servico2 = new ServicoModel(2, "Tela para Projetor");
         ServicoModel servico3 = new ServicoModel(3, "Mouse e Teclado");
@@ -57,11 +59,13 @@ public class Banco {
         usuario.add(usuario1);
         usuario.add(usuario2);
         
+        cliente.add(cliente0);
         cliente.add(cliente1);
         cliente.add(cliente2);
         cliente.add(cliente3);
         cliente.add(cliente4);
         
+        servico.add(servico0);
         servico.add(servico1);
         servico.add(servico2);
         servico.add(servico3);

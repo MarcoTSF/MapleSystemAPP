@@ -40,7 +40,7 @@ public class Agenda extends javax.swing.JFrame {
 
         TabelaAgenda = new javax.swing.JScrollPane();
         Tabela1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        ButtonAgenda = new javax.swing.JButton();
         ObservacaoAgenda = new javax.swing.JScrollPane();
         Observacao1 = new javax.swing.JTextArea();
         CampoHora = new javax.swing.JFormattedTextField();
@@ -80,16 +80,16 @@ public class Agenda extends javax.swing.JFrame {
 
         getContentPane().add(TabelaAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 630, 120));
 
-        jButton1.setBackground(new java.awt.Color(164, 0, 0));
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Agendar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonAgenda.setBackground(new java.awt.Color(164, 0, 0));
+        ButtonAgenda.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        ButtonAgenda.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonAgenda.setText("Agendar");
+        ButtonAgenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ButtonAgendaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 190, 30));
+        getContentPane().add(ButtonAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 190, 30));
 
         Observacao1.setColumns(20);
         Observacao1.setRows(5);
@@ -102,15 +102,11 @@ public class Agenda extends javax.swing.JFrame {
 
         getContentPane().add(CampoServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 150, -1));
 
-        CampoCliente.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                CampoClienteItemStateChanged(evt);
-            }
-        });
         getContentPane().add(CampoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 150, -1));
 
         CampoId.setEditable(false);
-        CampoId.setForeground(new java.awt.Color(102, 102, 102));
+        CampoId.setForeground(new java.awt.Color(153, 153, 153));
+        CampoId.setText("0");
         CampoId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoIdActionPerformed(evt);
@@ -165,24 +161,19 @@ public class Agenda extends javax.swing.JFrame {
         getContentPane().add(PainelAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 510));
 
         BackgroundAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/background-menu-clean.png"))); // NOI18N
-        getContentPane().add(BackgroundAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(BackgroundAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ButtonAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgendaActionPerformed
+        // TODO add your handling code here:
+        this.controller.agendar();
+    }//GEN-LAST:event_ButtonAgendaActionPerformed
+
     private void CampoIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.controller.agendar();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void CampoClienteItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CampoClienteItemStateChanged
-        // TODO add your handling code here:
-         this.controller.atualizaId();
-    }//GEN-LAST:event_CampoClienteItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -221,6 +212,7 @@ public class Agenda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackgroundAgenda;
+    private javax.swing.JButton ButtonAgenda;
     private javax.swing.JComboBox<String> CampoCliente;
     private javax.swing.JFormattedTextField CampoDataEntrega;
     private javax.swing.JFormattedTextField CampoDataReserva;
@@ -239,7 +231,6 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel TextHora;
     private javax.swing.JLabel TextId;
     private javax.swing.JLabel TextServico;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 
     public JTable getTabela1() {
@@ -307,8 +298,8 @@ public class Agenda extends javax.swing.JFrame {
     }
     
     private void iniciar() {
-         this.controller.atualizaTabela();
-         this.controller.atualizaCliente();
-         this.controller.atualizaServico();
+        this.controller.atualizaTabela();
+        this.controller.atualizaCliente();
+        this.controller.atualizaServico();
     }
 }

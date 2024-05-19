@@ -45,11 +45,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(900, 506));
         setMinimumSize(new java.awt.Dimension(900, 506));
+        setModalExclusionType(null);
         setPreferredSize(new java.awt.Dimension(900, 506));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BackgroundMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/background-menu.png"))); // NOI18N
-        getContentPane().add(BackgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, -1, 480));
+        getContentPane().add(BackgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 476));
 
         jMenuBar1.setMaximumSize(new java.awt.Dimension(197, 30));
         jMenuBar1.setMinimumSize(new java.awt.Dimension(197, 30));

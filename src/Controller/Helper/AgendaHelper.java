@@ -65,10 +65,6 @@ public class AgendaHelper {
         return (ServicoModel) view.getCampoServico().getSelectedItem();
     }
 
-    public void setarId(int id) {
-        view.getCampoId().setText(Integer.toString(id));
-    }
-
     public AgendamentoModel obterModelo() {
         String idString = view.getCampoId().getText();
         int id = Integer.parseInt(idString);
@@ -86,10 +82,12 @@ public class AgendaHelper {
     }
 
     public void limparTela() {
-       view.getCampoId().setText("0");
-       view.getCampoDataReserva().setText("");
-       view.getCampoDataEntrega().setText("");
-       view.getCampoHora().setText("");
-       view.getObservacao1().setText("");
+        view.getCampoId().setText("0");
+        view.getCampoCliente().setSelectedIndex(0);
+        view.getCampoServico().setSelectedIndex(0);
+        view.getCampoDataReserva().setText("");
+        view.getCampoDataEntrega().setText("");
+        view.getCampoHora().setText("");
+        view.getObservacao1().setText("");
     }
 }

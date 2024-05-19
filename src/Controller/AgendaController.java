@@ -51,11 +51,6 @@ public class AgendaController {
         helper.preencherServicos(servicos);
     }
     
-    public void atualizaId(){
-            ClienteModel cliente = helper.obterClientes();
-            helper.setarId(cliente.getId());
-        }
-    
     public void agendar(){
             AgendamentoModel agendamento = helper.obterModelo();
             new AgendaDAO().insert(agendamento);
