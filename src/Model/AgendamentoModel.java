@@ -44,6 +44,14 @@ public class AgendamentoModel {
         this.observacao = observacao;
     }
 
+    public AgendamentoModel(int id, ClienteModel cliente, Date dataReserva, Date dataEntrega, String observacao) {
+        this.id = id;
+        this.cliente = cliente;
+        this.dataReserva = dataReserva;
+        this.dataEntrega = dataEntrega;
+        this.observacao = observacao;
+    }
+
     public int getId() {
         return id;
     }

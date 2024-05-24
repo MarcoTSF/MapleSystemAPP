@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author mtsfs
  */
-public class AgendaHelper {
+public class AgendaHelper implements iHelper{
     private final Agenda view;
 
     public AgendaHelper(Agenda view) {
@@ -65,6 +65,7 @@ public class AgendaHelper {
         return (ServicoModel) view.getCampoServico().getSelectedItem();
     }
 
+    @Override
     public AgendamentoModel obterModelo() {
         String idString = view.getCampoId().getText();
         int id = Integer.parseInt(idString);
@@ -81,6 +82,7 @@ public class AgendaHelper {
         return agendamento;
     }
 
+    @Override
     public void limparTela() {
         view.getCampoId().setText("0");
         view.getCampoCliente().setSelectedIndex(0);

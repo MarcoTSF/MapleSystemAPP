@@ -15,7 +15,7 @@ O Projeto esta sendo realizado utilizando as seguintes tecnologias:
 - NetBeans 8.2 (IDE);
 - GitHub (Armazenamento do código do projeto);
 - GitHub Desktop (Software para ontrole de versão de códigos armazeanados no GitHub);
-  
+
 ## Contribuições
 
 Sinta-se à vontade para contribuir para o projeto. Você pode abrir problemas (issues) ou enviar solicitações de pull (pull requests) para melhorias, correções de bugs e novos recursos.
